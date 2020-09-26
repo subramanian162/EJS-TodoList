@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>EJS Template</title>
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+
+    <div class="box" id="heading">
+      <h1><%= listName %> </h1>
+    </div>
+
+    <div class="box">
+      <% for(var itr=0; itr<listItems.length; itr++) { %>
+        <div class="item">
+          <input type="checkbox">
+          <p> <%= listItems[itr] %> </p>
+        </div>
+      <% } %>
+      <form class="item" action="/" method="post">
+        <input type="text" name="item" placeholder="Enter the list item" autocomplete="off">
+        <button type="submit" name="listType" value=<%= listName %> >+</button>
+      </form>
+    </div>
+  </body>
+</html>
