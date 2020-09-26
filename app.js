@@ -3,6 +3,20 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 
+//Applicatio internal Modules initialization
+const date = require(__dirname+"/internal_modules/date.js");
+
+// Sample Internal Module test
+/*************************************************************************************/
+// const test = require(__dirname+'/internal_modules/test.js');
+// console.log(test);
+// test.test();
+// test.test1();
+// test.test2();
+// test.test3();
+// test.test4();
+// test.test5();
+/************************************************************************************/
 const app = express();
 
 //Application Dependency Settings
@@ -12,18 +26,14 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('static'));
 
 //Application Storage Variables
-let items = [];
-let workItems = [];
+const items = [];
+const workItems = [];
 
 //Application Route Code Begin
 app.get('/',function(req,res){
   console.log("INFO: Inside the '/' route GET request");
-
-  const day = new Date();
-  const today = new Intl.DateTimeFormat('en', { weekday: 'long' }).format(day);
-
   let templateData = {
-    listName: today,
+    listName: date.getDay(),
     listItems: items
   };
 
@@ -55,6 +65,11 @@ app.get('/work',function(req,res){
     listItems: workItems
   }
   res.render('list',templateData);
+});
+
+app.get('/about' , function(req,res){
+  console.log("INFO: Inside the '/aboute' route GET request");
+  res.render('about');
 });
 //Application Route Code END
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 html {
   background-color: #E4E9FD;
   background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
@@ -8,6 +10,9 @@ html {
 h1 {
   color: #fff;
   padding: 10px;
+}
+#info p {
+    font-family: 'Dancing Script', cursive;
 }
 
 .box {
@@ -21,6 +26,23 @@ h1 {
 #heading {
   background-color: #A683E3;
   text-align: center;
+}
+
+#about {
+  margin: 5px auto;
+  max-width: 75%;
+  background-color: #A683E3;
+  text-align: center;
+}
+
+#info {
+ max-width: 70%;
+ background-color: #fbfafd;
+ text-align: center;
+}
+
+#info:hover {
+  background-color: #ece5fb;
 }
 
 .item {

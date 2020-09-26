@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>EJS Template</title>
-    <link rel="stylesheet" href="/css/styles.css">
-  </head>
-  <body>
+<%- include("header") -%>
 
     <div class="box" id="heading">
       <h1><%= listName %> </h1>
@@ -23,5 +16,5 @@
         <button type="submit" name="listType" value=<%= listName %> >+</button>
       </form>
     </div>
-  </body>
-</html>
+
+<%- include("footer") -%>
